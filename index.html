@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Count Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🤔 What is Your Body Count?</h1>
+    <p>Let's predict your body count! Answer a few simple questions first.</p>
+
+    <!-- Gender Selection -->
+    <div id="step1">
+      <p>Are you a:</p>
+      <button class="button" onclick="selectGender('Girl')">Girl</button>
+      <button class="button" onclick="selectGender('Boy')">Boy</button>
+    </div>
+
+    <!-- Age Confirmation -->
+    <div id="step2" class="hidden">
+      <p>Are you 18 or older?</p>
+      <button class="button" onclick="confirmAge(true)">Yes</button>
+      <button class="button" onclick="confirmAge(false)">No</button>
+    </div>
+
+    <!-- Result Display -->
+    <div id="result" class="hidden">
+      <h2>🎉 Congratulations!</h2>
+      <p>Your body count is:</p>
+      <h1 id="bodyCount" class="count"></h1>
+      <button class="button" onclick="shareResult()">Share My Result</button>
+      <button id="downloadButton" class="hidden">Download Result Image</button>
+    </div>
+  </div>
+
+  <div id="messageContainer" class="hidden">
+    <p id="messageText"></p>
+    <button id="shareButton" onclick="shareResult()">Share Your Result</button>
+  </div>
+  
+
+  <div id="canvasContainer" class="hidden">
+    <canvas id="resultCanvas" width="400" height="200"></canvas>
+  </div>
+
+
+
+  <div id="commentSection" class="hidden">
+  <h3>Your Thoughts</h3>
+  <textarea id="userComment" placeholder="Leave your comment here..." rows="4" cols="50"></textarea>
+  <button id="submitComment" onclick="submitComment()">Submit Comment</button>
+  <div id="thankYouMessage" class="hidden">
+    <p>Thank you for your comment!</p>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
